@@ -9,3 +9,13 @@
         pkg:
           - nodejs
           - npm
+- name: Create new linux user for node app
+  become: yes 
+  vars_files:
+    - node-vars  
+  tasks:
+    - name: Create linux user for nodejs
+      ansible.builtin.user:
+        name: "{{linux_name}}"
+        comment: Node User
+        group: admin
