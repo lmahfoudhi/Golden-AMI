@@ -21,3 +21,10 @@ source "amazon-ebs" "ubuntu" {
   }
   ssh_username = "ubuntu"
 }
+
+build {
+  name    = "build-node"
+  sources = [
+    "source.amazon-ebs.ubuntu"
+  ]
+}
