@@ -23,7 +23,7 @@
   become: True
   become_user: "{{linux_name}}"
   vars_files:
-    - nodejs-app-vars
+    - node-vars
   tasks:
     - name: Unpack the nodejs file
       ansible.builtin.unarchive:
